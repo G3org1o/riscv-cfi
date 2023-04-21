@@ -40,7 +40,7 @@ privileged than M:
 
 [NOTE]
 ====
-When the Zisslpcfi extension is available for use at privilege mode less than
+When the Zisslpcfi extension is available for use at a privilege mode less than
 M, the operating system may use the `UBCFIE` and `UFCFIE` to selectively
 enable the backward-edge and forward-edge CFI, respectively, for U-mode
 applications.
