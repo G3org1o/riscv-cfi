@@ -126,7 +126,7 @@ and Zcmop extensions.
 
 === Forward-edge control-flow integrity
 
-To enforce forward edge control-flow integrity, Zicfilp extension introduces
+To enforce forward-edge control-flow integrity, Zicfilp extension introduces
 a landing pad (`lpad`) instruction that allows software to indicate valid
 targets for indirect calls and jumps in a program.
 
@@ -160,7 +160,9 @@ the available gadget space. A second form of label generation may generate a
 signature, such as a MAC, using the prototype of the function. Programs that use
 this approach would further constrain the gadgets accessible from a call site to
 only indirect callable functions that match the prototype of the called
-functions. Another approach to label generation involves analyzing the
+functions. 
+
+Another approach to label generation involves analyzing the
 control-flow-graph (CFG) of the program, which can lead to even more stringent
 constraints on the set of reachable gadgets. Such programs may further use
 multiple labels per function, which means that if a function is called from two
@@ -188,14 +190,14 @@ that is built with `lpad` instruction can thus continue to operate correctly,
 but without forward-edge control-flow integrity, on processors that do not
 support the Zicfilp extension or if the Zicfilp extension is not active.
 
-As discussed earlier for the Zicfiss extension, compilers, linkers, and dynamic
-loaders should provided an attribute flag to indicate if the program has been
+As discussed earlier for the Zicfiss extension, linkers, and dynamic
+loaders should be provided with an attribute flag to indicate if the program has been
 compiled with the Zicfilp extension and use that to determine if the Zicfilp
 extension should be activated.
 
 When Zicfilp extension is not active or not implemented, that hart does not
-required landing pad instructions at targets of indirect calls/jumps and the
-landing instructions revert to being a no-op. This allows a program compiled
+require landing pad instructions at targets of indirect calls/jumps and the
+landing instructions revert to being no-ops. This allows a program compiled
 with landing pad instructions to operate correctly but without forward-edge
 control-flow integrity.
 
